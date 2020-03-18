@@ -2,11 +2,23 @@
   "name": "custom-css-generator",
   "version": "0.1.0",
   "private": true,
+  "author": {
+    "name": "Vishnu Baliga",
+    "email": "baliga.vishnu@gmail.com",
+    "url": "https://vishnubaliga.com"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
+    "ace-builds": "^1.4.8",
+    "axios": "^0.19.2",
+    "brace": "^0.11.1",
+    "classnames": "^2.2.6",
+    "copy-to-clipboard": "^3.3.1",
+    "node-sass": "^4.13.1",
     "react": "^16.13.0",
+    "react-ace": "^8.1.0",
     "react-dom": "^16.13.0",
     "react-scripts": "3.4.0"
   },
