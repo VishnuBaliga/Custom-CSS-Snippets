@@ -12,7 +12,17 @@ import copy from 'copy-to-clipboard';
 
 
 const AIRTABLE_API_KEY = `keyDK80FJl78M2lJg`;
+const QUERY_PARAMS = `&sort%5B0%5D%5Bfield%5D=desc`;
 
+
+const ListLoader = () => {
+  return ( <div className="loader-container">
+  <div className="css-list-item--loader" />
+  <div className="css-list-item--loader" />
+  <div className="css-list-item--loader" />
+  <div className="css-list-item--loader" />   
+</div>)
+};
 
 class App extends React.Component{
   constructor(){
@@ -52,7 +62,7 @@ handleCopy = (value) => {
 componentDidMount() { 
 
   this.setState({ loading: true });
-  axios.get(`https://api.airtable.com/v0/app4o2guYDiUQTaxr/Table%201?api_key=${AIRTABLE_API_KEY}`).then(response => { 
+  axios.get(`https://api.airtable.com/v0/app4o2guYDiUQTaxr/Table%201?api_key=${AIRTABLE_API_KEY}&&${QUERY_PARAMS}`).then(response => { 
     this.setState({ cssData: response.data.records, loading:false }); 
   }).catch(err => {
     this.setState({ loading:false });
@@ -65,9 +75,9 @@ componentDidMount() {
 render(){
   const {CSSVal, showCode, copying, cssData, loading, activeItem} = this.state;
   return (
-    <div className="bg-top">
+    <div className="banner">
       <header className="header">
-          <h3>CSS Snippets</h3>
+          <h2>Custom CSS Snippets</h2>
           <p>Custom style your SurveySparrow forms in seconds!</p>
       </header>
 
@@ -78,7 +88,8 @@ render(){
             <h4>Choose your Snippet!</h4>  
           </div> 
           </div>
-            <div className="row">
+
+        {loading? <ListLoader /> : <div className="row">
             <div className={classnames({ 'column': true, 'column-50': showCode })}>
 
                 {cssData && cssData.map((value,index)=>{
@@ -98,9 +109,10 @@ render(){
                 'column-50': true,
                 'container--right': true,
                  })}>
+                     <div className="container-right--contents">
                      <div className="row">
                       <div className="column ace-actions"> 
-                            <a href="#!" onClick={() => copying ? null : this.handleCopy(CSSVal)}>{copying ? `Copying` : `Click here to copy Css`}</a>
+                            <a onClick={() => copying ? null : this.handleCopy(CSSVal)}>{copying ? `Copying` : `Click here to copy Css`}</a>
                       </div> 
                       </div>
                 <div className="ace-wrapper">
@@ -122,8 +134,10 @@ render(){
               
                 </div> 
               </div> 
+              </div> 
               }
             </div>
+}
         </div> 
       </div>
 

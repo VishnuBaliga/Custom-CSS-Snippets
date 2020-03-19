@@ -1,15 +1,37 @@
 @import './normalize';
 @import './miligram';
 
+// $primary-color: #188367;
 
-.bg-top {
+$primary-color: #37A67D;
+
+body{
+    font-family: 'Baloo Chettan 2', cursive !important;
+}
+a
+{
+    cursor: pointer;
+}
+.banner {
     top: 0;
-    height: 260px;
-    background: #191c27;
+    height: 300px;
+    background: $primary-color;
 
     position: absolute;
     left: 0;
     width: 100%;
+
+    &:before {
+        content: "";
+        position: absolute;
+        right: 12%;
+        bottom: 0;
+        width: 256px;
+        height: 200px;
+        background: $primary-color;
+        background-image: radial-gradient(hsla(0,0%,100%,.2) 15%,transparent 0),radial-gradient(hsla(0,0%,100%,.2) 15%,transparent 0);
+        background-size: 25px 25px;
+    }
 }
 .header{
     margin: 50px auto 0;
@@ -17,7 +39,7 @@
     max-width: 940px;
     // display: flex;
     color: #eee;
-    h3{
+    h3,h2{
         margin: 0.2em 0;
     }
     p{
@@ -61,7 +83,7 @@
     }
 }
 .container-main {
-    margin: 60px auto 0;
+    margin: 60px auto 50px;
     width: 80%;
     max-width: 940px;
     z-index: 99;
@@ -73,6 +95,10 @@
     background: #fff;
     position: relative;
     z-index: 99;
+
+    h4{
+        color: #222;
+    }
 }
 
 .css-list-item.active{
@@ -92,6 +118,9 @@
     border-radius: 2px;
     cursor: pointer;
     transition: all 0.3s; 
+    &:last-child{
+        border-bottom: thin solid transparent;
+    }
     &:hover{
         background-color:#efefef;
     }
@@ -99,7 +128,7 @@
         margin:0;
     }
     span.chat{
-        background-color:#4354b3;
+        background-color:$primary-color;
         color: #fff;
 
     }
@@ -123,3 +152,50 @@
 {
     width: 100% !important;
 }
+
+
+
+
+@keyframes placeHolderShimmer {
+    0% {
+      background-position: -468px 0
+    }
+  
+    100% {
+      background-position: 468px 0
+    }
+  }
+  
+  $ss-color--env: #F5F5F5;
+  $ss-color--border: #EDEDED;
+  
+  @mixin animated_skeleton_bg($height: 20px, $width:auto) {
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: placeHolderShimmer;
+    animation-timing-function: linear;
+    background: $ss-color--env;
+    background: linear-gradient(to right, $ss-color--env 8%, $ss-color--border 18%, $ss-color--env 33%);
+    background-size: 800px 104px;
+    height: $height;
+    border-radius: 6px;
+  
+    @if $width {
+      width: $width;
+    }
+  
+    position: relative;
+  }
+
+  .loader-container
+  {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+  }
+  .css-list-item--loader{
+    @include animated_skeleton_bg(40px,100%);   
+    margin: 10px 0;
+  }
