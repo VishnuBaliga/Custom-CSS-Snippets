@@ -1,5 +1,6 @@
 @import './normalize';
 @import './miligram';
+@import './mixins';
 
 // $primary-color: #188367;
 
@@ -28,6 +29,9 @@ a
         bottom: 0;
         width: 256px;
         height: 200px;
+        @include viewport(mob){
+         display:none;
+        }
         background: $primary-color;
         background-image: radial-gradient(hsla(0,0%,100%,.2) 15%,transparent 0),radial-gradient(hsla(0,0%,100%,.2) 15%,transparent 0);
         background-size: 25px 25px;
@@ -70,6 +74,10 @@ a
     background-color: #383838;
     border-radius: 2px;
     padding: 10px 20px;
+    @include viewport(mob){
+        margin-top: 30px;
+    }
+
     h4,h5,p,a{
         margin:0; 
         font-weight: 400;

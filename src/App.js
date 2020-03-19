@@ -90,7 +90,7 @@ render(){
           </div>
 
         {loading? <ListLoader /> : <div className="row">
-            <div className={classnames({ 'column': true, 'column-50': showCode })}>
+            <div className={classnames({ 'column': true })}>
 
                 {cssData && cssData.map((value,index)=>{
                   return(
@@ -105,8 +105,7 @@ render(){
                 })}
               </div>
               {showCode &&  <div className={classnames({ 
-                'column': true, 
-                'column-50': true,
+                'column': true,  
                 'container--right': true,
                  })}>
                      <div className="container-right--contents">
