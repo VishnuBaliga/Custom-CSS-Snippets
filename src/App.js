@@ -78,7 +78,7 @@ render(){
     <div className="banner">
       <header className="header">
           <h2>Custom CSS Snippets</h2>
-          <p>Custom style your SurveySparrow forms in seconds!</p>
+          <p>Custom style your <a target="_blank" href="https://vishnubaliga.com/">SurveySparrow</a> forms in seconds!</p>
       </header>
 
       <div className="container-main"> 
@@ -140,6 +140,10 @@ render(){
 }
         </div> 
       </div>
+
+    <div className="container">
+      <footer id="footer"><p className="small">Developed with ❤ by <a target="_blank" href="https://vishnubaliga.com/">Vishnu Baliga</a></p></footer> 
+    </div>
 
     </div>
   );
