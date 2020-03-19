@@ -78,7 +78,7 @@ render(){
     <div className="banner">
       <header className="header">
           <h2>Custom CSS Snippets</h2>
-          <p>Custom style your <a target="_blank" href="https://vishnubaliga.com/">SurveySparrow</a> forms in seconds!</p>
+          <p>Custom style your <a target="_blank" href="https://surveysparrow.com/">SurveySparrow</a> forms in seconds!</p>
       </header>
 
       <div className="container-main"> 
