@@ -79,6 +79,7 @@ render(){
       <header className="header">
           <h2>Custom CSS Snippets</h2>
           <p>Custom-style your <a target="_blank" href="https://surveysparrow.com/">SurveySparrow</a> forms in seconds!</p>
+          <p className="small" style={{paddingTop: '10px'}}>Developed with ❤ by <a target="_blank" href="https://vishnubaliga.com/">Vishnu Baliga</a></p>
       </header>
 
       <div className="container-main"> 
@@ -140,7 +141,7 @@ render(){
         </div> 
       </div>
 
-    <div className="container">
+    <div className="container" style={{paddingBottom: '15px'}}>
       <footer id="footer"><p className="small">Developed with ❤ by <a target="_blank" href="https://vishnubaliga.com/">Vishnu Baliga</a></p></footer> 
     </div>
 
